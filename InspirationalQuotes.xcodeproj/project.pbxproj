@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		34AA23ECDAC30BB3DB73046B /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */; };
+		49C412362EE9212F62BDA878 /* Pods_InspirationalQuotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */; };
 		B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34B2860CFAC00799285 /* AppDelegate.swift */; };
 		B10EE34E2860CFAC00799285 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34D2860CFAC00799285 /* SceneDelegate.swift */; };
 		B10EE3502860CFAC00799285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34F2860CFAC00799285 /* ViewController.swift */; };
@@ -17,6 +19,7 @@
 		B10EE3662860CFAF00799285 /* InspirationalQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3652860CFAF00799285 /* InspirationalQuotesTests.swift */; };
 		B10EE3702860CFAF00799285 /* InspirationalQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */; };
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
+		BBBBB01D7382C1B1D2E502EF /* Pods_InspirationalQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +40,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.debug.xcconfig"; sourceTree = "<group>"; };
+		23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
+		4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
+		476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.release.xcconfig"; sourceTree = "<group>"; };
+		7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotes_InspirationalQuotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10EE3482860CFAC00799285 /* InspirationalQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10EE34B2860CFAC00799285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B10EE34D2860CFAC00799285 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -51,6 +62,7 @@
 		B10EE36B2860CFAF00799285 /* InspirationalQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspirationalQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITests.swift; sourceTree = "<group>"; };
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +70,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BBBBB01D7382C1B1D2E502EF /* Pods_InspirationalQuotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -65,6 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49C412362EE9212F62BDA878 /* Pods_InspirationalQuotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -72,12 +86,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				34AA23ECDAC30BB3DB73046B /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BE439EA575B42C202DBA3E7 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */,
+				8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */,
+				476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5A5C748CCE67FA0450B1792C /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */,
+				75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */,
+				7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */,
+				4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */,
+				23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */,
+				F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		B10EE33F2860CFAC00799285 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +123,8 @@
 				B10EE3642860CFAF00799285 /* InspirationalQuotesTests */,
 				B10EE36E2860CFAF00799285 /* InspirationalQuotesUITests */,
 				B10EE3492860CFAC00799285 /* Products */,
+				4BE439EA575B42C202DBA3E7 /* Frameworks */,
+				5A5C748CCE67FA0450B1792C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +177,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE3752860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotes" */;
 			buildPhases = (
+				AAE86896C1B92DAA5B5B1A81 /* [CP] Check Pods Manifest.lock */,
+				B1787D5528611F6D00F3AC05 /* Run Script */,
 				B10EE3442860CFAC00799285 /* Sources */,
 				B10EE3452860CFAC00799285 /* Frameworks */,
 				B10EE3462860CFAC00799285 /* Resources */,
@@ -154,6 +196,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE3782860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotesTests" */;
 			buildPhases = (
+				80B3B699E9BF58F06EF2ECC2 /* [CP] Check Pods Manifest.lock */,
 				B10EE35D2860CFAF00799285 /* Sources */,
 				B10EE35E2860CFAF00799285 /* Frameworks */,
 				B10EE35F2860CFAF00799285 /* Resources */,
@@ -172,6 +215,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE37B2860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotesUITests" */;
 			buildPhases = (
+				10FC8555BE12D8EAB925E179 /* [CP] Check Pods Manifest.lock */,
 				B10EE3672860CFAF00799285 /* Sources */,
 				B10EE3682860CFAF00799285 /* Frameworks */,
 				B10EE3692860CFAF00799285 /* Resources */,
@@ -255,6 +299,93 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		10FC8555BE12D8EAB925E179 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotes-InspirationalQuotesUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		80B3B699E9BF58F06EF2ECC2 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotesTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAE86896C1B92DAA5B5B1A81 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B1787D5528611F6D00F3AC05 /* Run Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Script";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B10EE3442860CFAC00799285 /* Sources */ = {
@@ -436,6 +567,7 @@
 		};
 		B10EE3762860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -463,6 +595,7 @@
 		};
 		B10EE3772860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -490,6 +623,7 @@
 		};
 		B10EE3792860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -509,6 +643,7 @@
 		};
 		B10EE37A2860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -528,6 +663,7 @@
 		};
 		B10EE37C2860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -545,6 +681,7 @@
 		};
 		B10EE37D2860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
