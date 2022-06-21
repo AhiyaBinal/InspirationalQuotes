@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		34AA23ECDAC30BB3DB73046B /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */; };
 		49C412362EE9212F62BDA878 /* Pods_InspirationalQuotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */; };
+		B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
+		B10E7A8628622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
+		B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */; };
+		B10E7A8B28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */; };
 		B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34B2860CFAC00799285 /* AppDelegate.swift */; };
 		B10EE34E2860CFAC00799285 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34D2860CFAC00799285 /* SceneDelegate.swift */; };
 		B10EE3502860CFAC00799285 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE34F2860CFAC00799285 /* ViewController.swift */; };
@@ -48,6 +52,8 @@
 		75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.release.xcconfig"; sourceTree = "<group>"; };
 		7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotes_InspirationalQuotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuotePageViewController.swift; sourceTree = "<group>"; };
+		B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuoteDataViewController.swift; sourceTree = "<group>"; };
 		B10EE3482860CFAC00799285 /* InspirationalQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10EE34B2860CFAC00799285 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B10EE34D2860CFAC00799285 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -116,6 +122,25 @@
 			path = Pods;
 			sourceTree = "<group>";
 		};
+		B10E7A8728622EB500612409 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B10EE34F2860CFAC00799285 /* ViewController.swift */,
+				B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */,
+				B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		B10E7A8828622EE500612409 /* Storyboards */ = {
+			isa = PBXGroup;
+			children = (
+				B10EE3512860CFAC00799285 /* Main.storyboard */,
+				B10EE3592860CFAF00799285 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboards;
+			sourceTree = "<group>";
+		};
 		B10EE33F2860CFAC00799285 = {
 			isa = PBXGroup;
 			children = (
@@ -143,10 +168,9 @@
 			children = (
 				B10EE34B2860CFAC00799285 /* AppDelegate.swift */,
 				B10EE34D2860CFAC00799285 /* SceneDelegate.swift */,
-				B10EE34F2860CFAC00799285 /* ViewController.swift */,
-				B10EE3512860CFAC00799285 /* Main.storyboard */,
+				B10E7A8828622EE500612409 /* Storyboards */,
+				B10E7A8728622EB500612409 /* ViewControllers */,
 				B10EE3572860CFAF00799285 /* Assets.xcassets */,
-				B10EE3592860CFAF00799285 /* LaunchScreen.storyboard */,
 				B10EE35C2860CFAF00799285 /* Info.plist */,
 				B10EE3542860CFAC00799285 /* InspirationalQuotes.xcdatamodeld */,
 			);
@@ -392,9 +416,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */,
 				B10EE3562860CFAC00799285 /* InspirationalQuotes.xcdatamodeld in Sources */,
 				B10EE3502860CFAC00799285 /* ViewController.swift in Sources */,
 				B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */,
+				B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
 				B10EE34E2860CFAC00799285 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -403,7 +429,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10E7A8B28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */,
 				B10EE3662860CFAF00799285 /* InspirationalQuotesTests.swift in Sources */,
+				B10E7A8628622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -578,6 +606,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -589,7 +618,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -606,6 +635,7 @@
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -617,7 +647,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
