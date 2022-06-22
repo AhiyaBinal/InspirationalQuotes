@@ -23,6 +23,8 @@
 		B10EE3662860CFAF00799285 /* InspirationalQuotesTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3652860CFAF00799285 /* InspirationalQuotesTests.swift */; };
 		B10EE3702860CFAF00799285 /* InspirationalQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */; };
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
+		B16702E52863920E00E642CF /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16702E42863920E00E642CF /* CommonFunctions.swift */; };
+		B16702E62863C41D00E642CF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B16702E32863912300E642CF /* data.json */; };
 		BBBBB01D7382C1B1D2E502EF /* Pods_InspirationalQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */; };
 /* End PBXBuildFile section */
 
@@ -68,6 +70,8 @@
 		B10EE36B2860CFAF00799285 /* InspirationalQuotesUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InspirationalQuotesUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITests.swift; sourceTree = "<group>"; };
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		B16702E32863912300E642CF /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
+		B16702E42863920E00E642CF /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
 		F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -125,8 +129,10 @@
 		B10E7A8728622EB500612409 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
+				B16702E32863912300E642CF /* data.json */,
 				B10EE34F2860CFAC00799285 /* ViewController.swift */,
 				B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */,
+				B16702E42863920E00E642CF /* CommonFunctions.swift */,
 				B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */,
 			);
 			path = ViewControllers;
@@ -302,6 +308,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B16702E62863C41D00E642CF /* data.json in Resources */,
 				B10EE35B2860CFAF00799285 /* LaunchScreen.storyboard in Resources */,
 				B10EE3582860CFAF00799285 /* Assets.xcassets in Resources */,
 				B10EE3532860CFAC00799285 /* Main.storyboard in Resources */,
@@ -418,6 +425,7 @@
 			files = (
 				B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */,
 				B10EE3562860CFAC00799285 /* InspirationalQuotes.xcdatamodeld in Sources */,
+				B16702E52863920E00E642CF /* CommonFunctions.swift in Sources */,
 				B10EE3502860CFAC00799285 /* ViewController.swift in Sources */,
 				B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */,
 				B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
@@ -599,8 +607,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4F78VC7G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InspirationalQuotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -616,6 +626,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binal.InspirationalQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -628,8 +639,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = XQ4F78VC7G;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = InspirationalQuotes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -645,6 +658,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.binal.InspirationalQuotes;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

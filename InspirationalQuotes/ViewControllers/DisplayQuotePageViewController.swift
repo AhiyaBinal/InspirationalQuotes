@@ -6,12 +6,22 @@
 //
 
 import UIKit
+struct StrQuote: Decodable {
+    let content: String
+}
 
 class DisplayQuotePageViewController: UIPageViewController,UIPageViewControllerDataSource {
     var arrViewControllerList = [UIViewController]()
-
     override func viewDidLoad() {
         super.viewDidLoad()
+        if let localData = CommonFunctions.objCommonFunction.readLocalFile(forName: "data"){
+            do{
+                if let strTry: [StrQuote] = try? JSONDecoder().decode([StrQuote].self, from: localData){
+                    print(strTry)}
+            }catch{
+                print(error)
+            }
+        }
         arrViewControllerList = [
             DisplayQuoteDataViewController.getInstance(index: 0),
             DisplayQuoteDataViewController.getInstance(index: 1),
