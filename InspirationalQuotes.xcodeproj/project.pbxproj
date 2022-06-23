@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		34AA23ECDAC30BB3DB73046B /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */; };
-		49C412362EE9212F62BDA878 /* Pods_InspirationalQuotesTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */; };
 		B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
 		B10E7A8628622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
 		B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */; };
@@ -25,7 +23,6 @@
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
 		B16702E52863920E00E642CF /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16702E42863920E00E642CF /* CommonFunctions.swift */; };
 		B16702E62863C41D00E642CF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B16702E32863912300E642CF /* data.json */; };
-		BBBBB01D7382C1B1D2E502EF /* Pods_InspirationalQuotes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,11 +46,8 @@
 		140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.debug.xcconfig"; sourceTree = "<group>"; };
 		23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
 		4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotesTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.release.xcconfig"; sourceTree = "<group>"; };
 		7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_InspirationalQuotes_InspirationalQuotesUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuotePageViewController.swift; sourceTree = "<group>"; };
 		B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuoteDataViewController.swift; sourceTree = "<group>"; };
 		B10EE3482860CFAC00799285 /* InspirationalQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -80,7 +74,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BBBBB01D7382C1B1D2E502EF /* Pods_InspirationalQuotes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,7 +81,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				49C412362EE9212F62BDA878 /* Pods_InspirationalQuotesTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -96,7 +88,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				34AA23ECDAC30BB3DB73046B /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -106,9 +97,6 @@
 		4BE439EA575B42C202DBA3E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				5C57E15C7798FDFDDF8C307D /* Pods_InspirationalQuotes.framework */,
-				8E350B4843B06A0604531953 /* Pods_InspirationalQuotes_InspirationalQuotesUITests.framework */,
-				476A7684617F7FBA1A5AE143 /* Pods_InspirationalQuotesTests.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";

@@ -13,7 +13,7 @@ class CommonFunctions: NSObject {
     static let objCommonFunction = CommonFunctions()
     func loadJSON(fromURLString objUrlString: String, completion: @escaping(Result<Data,Error>) -> Void) {
             if let objURL = URL(string: objUrlString) {
-                let objUrlSession = URLSession(configuration: .default).dataTask(with: objURL){(data,response,error) in
+                let objUrlSession = URLSession(configuration: .default).dataTask(with: objURL){ (data, response, error) in
                     if let error = error {
                         completion(.failure(error))
                     }

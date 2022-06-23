@@ -29,7 +29,7 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMinY="YES"/>
                                 <color key="backgroundColor" systemColor="systemOrangeColor"/>
                                 <connections>
-                                    <segue destination="HfT-ND-ZDd" kind="embed" id="2if-27-eEb"/>
+                                    <segue destination="HfT-ND-ZDd" kind="embed" id="oim-tc-CIA"/>
                                 </connections>
                             </containerView>
                         </subviews>
@@ -68,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="lblQuote" destination="lYw-98-vJa" id="aE4-G3-2Pm"/>
+                        <outlet property="viewDisplay" destination="Cyc-Q4-Ti0" id="Nov-OU-8tD"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0ff-M4-we7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
