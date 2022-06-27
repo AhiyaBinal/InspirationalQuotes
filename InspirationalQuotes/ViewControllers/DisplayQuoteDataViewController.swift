@@ -16,25 +16,13 @@ class DisplayQuoteDataViewController: UIViewController {
     var arrParsedJson: [String] = []
     var index = 0
     var strValue: String = ""
-    static func getInstance(index: Int) -> UIViewController {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let objVC  = storyboard.instantiateViewController(withIdentifier: "DisplayQuoteDataViewController")
-        objVC.index(ofAccessibilityElement: index)
-        return objVC
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
         lblQuote.text = strValue
         // Do any additional setup after loading the view.
-    }
-    static func getData() -> Int {
-        if let localData = CommonFunctions.objCommonFunction.readLocalFile(forName: "data") {
-            do {
-                if let arrJsonData: [StrQuote1] = try? JSONDecoder().decode([StrQuote1].self, from: localData) {
-                    return arrJsonData.count
-                }
-            }
-        }
-        return 0
+//        curl --request GET \
+//            --url https://quotes15.p.rapidapi.com/quotes/random/ \
+//            --header 'X-RapidAPI-Host: quotes15.p.rapidapi.com' \
+//            --header 'X-RapidAPI-Key: aedfa8ecf5mshc5d574796af4a20p1d4569jsn0badb1845350'
     }
 }

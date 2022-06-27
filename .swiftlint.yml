@@ -1,0 +1,9 @@
+# rules that have both warning and error levels, can set just the warning level
+# implicitly
+
+line_length: 200
+# they can set both implicitly with an array
+
+disabled_rules: # rule identifiers to exclude from running
+  - colon
+  - comma

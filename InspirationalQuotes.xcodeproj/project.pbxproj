@@ -23,6 +23,7 @@
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
 		B16702E52863920E00E642CF /* CommonFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = B16702E42863920E00E642CF /* CommonFunctions.swift */; };
 		B16702E62863C41D00E642CF /* data.json in Resources */ = {isa = PBXBuildFile; fileRef = B16702E32863912300E642CF /* data.json */; };
+		B1F712B0286A06880089882F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B1F712AF286A06880089882F /* .swiftlint.yml */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B16702E32863912300E642CF /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		B16702E42863920E00E642CF /* CommonFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonFunctions.swift; sourceTree = "<group>"; };
+		B1F712AF286A06880089882F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -138,6 +140,7 @@
 		B10EE33F2860CFAC00799285 = {
 			isa = PBXGroup;
 			children = (
+				B1F712AF286A06880089882F /* .swiftlint.yml */,
 				B10EE34A2860CFAC00799285 /* InspirationalQuotes */,
 				B10EE3642860CFAF00799285 /* InspirationalQuotesTests */,
 				B10EE36E2860CFAF00799285 /* InspirationalQuotesUITests */,
@@ -296,6 +299,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1F712B0286A06880089882F /* .swiftlint.yml in Resources */,
 				B16702E62863C41D00E642CF /* data.json in Resources */,
 				B10EE35B2860CFAF00799285 /* LaunchScreen.storyboard in Resources */,
 				B10EE3582860CFAF00799285 /* Assets.xcassets in Resources */,

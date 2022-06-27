@@ -6,9 +6,6 @@
 //
 
 import UIKit
-
-
-
 class CommonFunctions: NSObject {
     static let objCommonFunction = CommonFunctions()
     func loadJSON(fromURLString objUrlString: String, completion: @escaping(Result<Data,Error>) -> Void) {
