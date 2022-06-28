@@ -6,21 +6,10 @@
 //
 
 import UIKit
+
 class CommonFunctions: NSObject {
     static let objCommonFunction = CommonFunctions()
-    func loadJSON(fromURLString objUrlString: String, completion: @escaping(Result<Data,Error>) -> Void) {
-            if let objURL = URL(string: objUrlString) {
-                let objUrlSession = URLSession(configuration: .default).dataTask(with: objURL){ (data, response, error) in
-                    if let error = error {
-                        completion(.failure(error))
-                    }
-                    if let data = data {
-                        completion(.success(data))
-                    }
-                }
-                objUrlSession.resume()
-            }
-    }
+   
     func readLocalFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name,

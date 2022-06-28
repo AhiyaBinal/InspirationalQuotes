@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>X-RapidAPI-Host</key>
+	<string>quotes15.p.rapidapi.com</string>
+	<key>X-RapidAPI-Key</key>
+	<string>aedfa8ecf5mshc5d574796af4a20p1d4569jsn0badb1845350</string>
+</dict>
+</plist>
