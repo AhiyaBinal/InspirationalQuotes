@@ -23,23 +23,19 @@ struct Structoriginator:Decodable {
     let name: String
     let url: String
 }
-class DisplayQuotePageViewController: UIPageViewController, UIPageViewControllerDataSource {
+class DisplayQuotePageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var arrViewControllerList = [UIViewController]()
+    var arrParsedDataList = [StrcutParsedData]()
     var arrDataList = [StrQuote]()
     var arrHeader = [String: String]()
-    //var dictDataList = StrcutParsedData()
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.loadJSON()
         self.getData()
         self.getViewControllers()
-        self.loadJSON()
         self.dataSource = self
-        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[0] as? DisplayQuoteDataViewController else {
-            return
-        }
-            let strFirstValue = arrDataList[0]
-            obj.strValue = strFirstValue.content
-            setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
+        self.delegate = self
+       
     }
     func loadJSON() {
         let headers = self.loadHeaders()
@@ -51,9 +47,9 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
-                    if let books = try? JSONDecoder().decode(StrcutParsedData.self, from: data) {
-                        print("Now Check this\(books)")
-                       // dictDataList = books
+                    if let dictDataList = try? JSONDecoder().decode(StrcutParsedData.self, from: data) {
+                        let dictValue = StrcutParsedData(id: dictDataList.id,language_code: dictDataList.language_code,content: dictDataList.content, url: dictDataList.url,originator: dictDataList.originator,tags: dictDataList.tags)
+                        self.arrParsedDataList.append(dictValue)
                     } else {
                         print("Invalid Response")
                     }
@@ -90,6 +86,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         objVC.index(ofAccessibilityElement: index)
         return objVC
     }
+     // Local Json Parsing Method
     func getData() {
         if let localData = CommonFunctions.objCommonFunction.readLocalFile(forName: "data") {
             do {
@@ -98,6 +95,18 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 print(error)
             }
         }
+    }
+    func reloadDataSourceDelegate(){
+        self.dataSource = nil
+        self.dataSource = self
+    }
+    func displayFirstViewController(){
+        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[0] as? DisplayQuoteDataViewController else {
+            return
+        }
+            let strFirstValue = arrDataList[0]
+            obj.strValue = strFirstValue.content
+            setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let indexItem = arrViewControllerList.firstIndex(of: viewController)!
@@ -130,5 +139,9 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
        // print(strQuote.name)
         return obj
     }
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
+        //Method call for next API call
+        print(transitionStyle)
     }
 }
