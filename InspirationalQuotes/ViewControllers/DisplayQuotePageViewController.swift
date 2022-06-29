@@ -30,14 +30,9 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
     var arrHeader = [String: String]()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadJSON()
-        self.getData()
-        self.getViewControllers()
-        self.dataSource = self
-        self.delegate = self
-       
+        self.loadJSON(index: 0)
     }
-    func loadJSON() {
+    func loadJSON(index: Int) {
         let headers = self.loadHeaders()
         var request = URLRequest(url: NSURL(string: "https://quotes15.p.rapidapi.com/quotes/random/")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
@@ -47,12 +42,18 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
             if let data = data {
+                DispatchQueue.main.async {
                     if let dictDataList = try? JSONDecoder().decode(StrcutParsedData.self, from: data) {
-                        let dictValue = StrcutParsedData(id: dictDataList.id,language_code: dictDataList.language_code,content: dictDataList.content, url: dictDataList.url,originator: dictDataList.originator,tags: dictDataList.tags)
-                        self.arrParsedDataList.append(dictValue)
-                    } else {
+                            let dictValue = StrcutParsedData(id: dictDataList.id,language_code: dictDataList.language_code,content: dictDataList.content, url: dictDataList.url,originator: dictDataList.originator,tags: dictDataList.tags)
+                            self.arrParsedDataList.append(dictValue)
+                            self.getViewControllers(indexItem: index)
+                            self.reloadDataSourceDelegate()
+                            if index == 0 {
+                                self.displayFirstViewController()}
+                } else {
                         print("Invalid Response")
                     }
+                }
                 } else if let error = error {
                     print("HTTP Request Failed \(error)")
                 }
@@ -74,19 +75,16 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         }
         return arrHeaderList
     }
-    func getViewControllers() {
-        for (item , data) in arrDataList.enumerated() {
-            arrViewControllerList.append(self.getInstance(index: item))
-            print(data)
-        }
-    }
+    func getViewControllers(indexItem : Int) {
+            arrViewControllerList.append(self.getInstance(index: indexItem))
+   }
     func getInstance(index: Int) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let objVC  = storyboard.instantiateViewController(withIdentifier: "DisplayQuoteDataViewController")
         objVC.index(ofAccessibilityElement: index)
         return objVC
     }
-     // Local Json Parsing Method
+    /* // Local Json Parsing Method
     func getData() {
         if let localData = CommonFunctions.objCommonFunction.readLocalFile(forName: "data") {
             do {
@@ -95,16 +93,16 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 print(error)
             }
         }
-    }
-    func reloadDataSourceDelegate(){
+    }*/
+    func reloadDataSourceDelegate() {
         self.dataSource = nil
         self.dataSource = self
     }
-    func displayFirstViewController(){
+    func displayFirstViewController() {
         guard let obj: DisplayQuoteDataViewController = arrViewControllerList[0] as? DisplayQuoteDataViewController else {
             return
         }
-            let strFirstValue = arrDataList[0]
+            let strFirstValue = arrParsedDataList[0]
             obj.strValue = strFirstValue.content
             setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
     }
@@ -118,30 +116,24 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             let obj: UIViewController = arrViewControllerList[indexItem - 1]
             return obj
         }
-        let strQuote = arrDataList[indexItem - 1]
+        let strQuote = arrParsedDataList[indexItem - 1]
         obj.strValue = strQuote.content
         return obj
     }
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let indexItem = arrViewControllerList.firstIndex(of: viewController)!
-    if indexItem == arrViewControllerList.count - 1 {
-        return nil // To show there is no next page
-    } else {
+//    if indexItem == arrViewControllerList.count - 1 {
+//        return nil // To show there is no next page
+//    } else {
         // Next UIViewController instance
+        self.loadJSON(index: indexItem + 1)
         guard let obj: DisplayQuoteDataViewController = arrViewControllerList[indexItem + 1] as? DisplayQuoteDataViewController else {
             let obj: UIViewController = arrViewControllerList[indexItem + 1]
             return obj
         }
-        let strQuote = arrDataList[indexItem + 1]
+        let strQuote = arrParsedDataList[indexItem + 1]
         obj.strValue = strQuote.content
-       // print(indexItem)
-       // print(strQuote.name)
         return obj
-    }
-    }
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
-        //Method call for next API call
-        print(transitionStyle)
     }
 }
