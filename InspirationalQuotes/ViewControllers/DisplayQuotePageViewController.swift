@@ -28,11 +28,25 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
     var arrParsedDataList = [StrcutParsedData]()
     var arrDataList = [StrQuote]()
     var arrHeader = [String: String]()
+    var currentIndex : Int = 0
+    var previousIndex : Int = 0
+    var nextIndex: Int = 0
+    var checkNextPageTransition = Bool()
+    let dispatchGroup = DispatchGroup()
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.loadJSON(index: 0)
+        dispatchGroup.enter()
+        self.loadJSON(index: currentIndex,completion: {
+            self.dispatchGroup.leave()
+            self.dispatchGroup.enter()
+            self.loadJSON(index: self.nextIndex + 1, completion: {
+                self.dispatchGroup.leave()
+            })
+        })
+        self.reloadDataSourceDelegate()
+
     }
-    func loadJSON(index: Int) {
+    func loadJSON(index: Int,completion: @escaping () -> Void) {
         let headers = self.loadHeaders()
         var request = URLRequest(url: NSURL(string: "https://quotes15.p.rapidapi.com/quotes/random/")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
@@ -44,12 +58,11 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             if let data = data {
                 DispatchQueue.main.async {
                     if let dictDataList = try? JSONDecoder().decode(StrcutParsedData.self, from: data) {
+                        print("data got")
                             let dictValue = StrcutParsedData(id: dictDataList.id,language_code: dictDataList.language_code,content: dictDataList.content, url: dictDataList.url,originator: dictDataList.originator,tags: dictDataList.tags)
                             self.arrParsedDataList.append(dictValue)
-                            self.getViewControllers(indexItem: index)
-                            self.reloadDataSourceDelegate()
-                            if index == 0 {
-                                self.displayFirstViewController()}
+                            self.displayViewController(indexItem: index)
+                        completion()
                 } else {
                         print("Invalid Response")
                     }
@@ -75,65 +88,70 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         }
         return arrHeaderList
     }
+    /*
     func getViewControllers(indexItem : Int) {
             arrViewControllerList.append(self.getInstance(index: indexItem))
-   }
+   }*/
     func getInstance(index: Int) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let objVC  = storyboard.instantiateViewController(withIdentifier: "DisplayQuoteDataViewController")
         objVC.index(ofAccessibilityElement: index)
         return objVC
     }
-    /* // Local Json Parsing Method
-    func getData() {
-        if let localData = CommonFunctions.objCommonFunction.readLocalFile(forName: "data") {
-            do {
-                arrDataList = try JSONDecoder().decode([StrQuote].self, from: localData)
-            } catch {
-                print(error)
-            }
-        }
-    }*/
     func reloadDataSourceDelegate() {
-        self.dataSource = nil
         self.dataSource = self
+        self.delegate = self
     }
-    func displayFirstViewController() {
-        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[0] as? DisplayQuoteDataViewController else {
+    func displayViewController(indexItem: Int) {
+        guard let obj: DisplayQuoteDataViewController = self.getInstance(index: indexItem) as? DisplayQuoteDataViewController else {
             return
         }
-            let strFirstValue = arrParsedDataList[0]
+            let strFirstValue = arrParsedDataList[indexItem]
             obj.strValue = strFirstValue.content
-            setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
+            arrViewControllerList.append(obj)
+        if indexItem == 0 {
+            setViewControllers([arrViewControllerList[indexItem]], direction: .forward, animated: true)
+          //  self.loadJSON(index: nextIndex + 1)
+        }
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
-        let indexItem = arrViewControllerList.firstIndex(of: viewController)!
-    if indexItem == 0 {
+        checkNextPageTransition = false
+    if currentIndex == 0 {
         return nil // To show there is no previous page
     } else {
         // Previous UIViewController instance
-        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[indexItem - 1] as? DisplayQuoteDataViewController else {
-            let obj: UIViewController = arrViewControllerList[indexItem - 1]
+        previousIndex = currentIndex - 1
+        currentIndex = previousIndex
+        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[previousIndex] as? DisplayQuoteDataViewController else {
+            let obj: UIViewController = arrViewControllerList[previousIndex]
             return obj
         }
-        let strQuote = arrParsedDataList[indexItem - 1]
+        let strQuote = arrParsedDataList[previousIndex]
         obj.strValue = strQuote.content
         return obj
     }
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
-        let indexItem = arrViewControllerList.firstIndex(of: viewController)!
-//    if indexItem == arrViewControllerList.count - 1 {
-//        return nil // To show there is no next page
-//    } else {
         // Next UIViewController instance
-        self.loadJSON(index: indexItem + 1)
-        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[indexItem + 1] as? DisplayQuoteDataViewController else {
-            let obj: UIViewController = arrViewControllerList[indexItem + 1]
+        checkNextPageTransition = true
+        nextIndex = currentIndex + 1
+        currentIndex = nextIndex
+        guard let obj: DisplayQuoteDataViewController = arrViewControllerList[nextIndex] as? DisplayQuoteDataViewController else {
+            let obj: UIViewController = arrViewControllerList[nextIndex]
             return obj
         }
-        let strQuote = arrParsedDataList[indexItem + 1]
-        obj.strValue = strQuote.content
+            let strQuote = arrParsedDataList[nextIndex]
+            obj.strValue = strQuote.content
         return obj
+    }
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
+        if completed {
+            if checkNextPageTransition {
+                dispatchGroup.enter()
+                self.loadJSON(index: nextIndex,completion: {
+                    self.dispatchGroup.leave()
+                })
+            }
+        }
     }
 }
