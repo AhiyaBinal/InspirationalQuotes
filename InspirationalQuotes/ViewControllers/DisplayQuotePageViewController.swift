@@ -6,11 +6,7 @@
 //
 
 import UIKit
-struct StrQuote: Decodable {
-    let content: String
-    let name: String
-}
-struct StrcutParsedData: Decodable {
+struct StructMain: Decodable {
     let id: Int
     let language_code: String
     let content: String
@@ -25,8 +21,7 @@ struct Structoriginator:Decodable {
 }
 class DisplayQuotePageViewController: UIPageViewController, UIPageViewControllerDataSource, UIPageViewControllerDelegate {
     var arrViewControllerList = [UIViewController]()
-    var arrParsedDataList = [StrcutParsedData]()
-    var arrDataList = [StrQuote]()
+    var arrParsedDataList = [StructMain]()
     var arrHeader = [String: String]()
     var currentIndex : Int = 0
     var previousIndex : Int = 0
@@ -35,18 +30,18 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
     let dispatchGroup = DispatchGroup()
     override func viewDidLoad() {
         super.viewDidLoad()
-        dispatchGroup.enter()
-        self.loadJSON(index: currentIndex,completion: {
-            self.dispatchGroup.leave()
-            self.dispatchGroup.enter()
-            self.loadJSON(index: self.nextIndex + 1, completion: {
-                self.dispatchGroup.leave()
-            })
-        })
+        self.loadFirstData()
+        self.displayViewController(indexItem: 0)
+        setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
+        self.loadJSON(index: currentIndex + 1)
         self.reloadDataSourceDelegate()
-
     }
-    func loadJSON(index: Int,completion: @escaping () -> Void) {
+    func loadFirstData() {
+        let dictOriginator = Structoriginator(id: 0, name: "", url: "")
+        let dictFirstValue = StructMain(id: 1,language_code: "en",content: "Welcome to Inspirational Quotes", url: "",originator: dictOriginator,tags: [])
+        arrParsedDataList.append(dictFirstValue)
+    }
+    func loadJSON(index: Int) {
         let headers = self.loadHeaders()
         var request = URLRequest(url: NSURL(string: "https://quotes15.p.rapidapi.com/quotes/random/")! as URL,
                                                 cachePolicy: .useProtocolCachePolicy,
@@ -55,14 +50,13 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         request.allHTTPHeaderFields = headers
 
         URLSession.shared.dataTask(with: request) { (data, response, error) in
-            if let data = data {
-                DispatchQueue.main.async {
-                    if let dictDataList = try? JSONDecoder().decode(StrcutParsedData.self, from: data) {
-                        print("data got")
-                            let dictValue = StrcutParsedData(id: dictDataList.id,language_code: dictDataList.language_code,content: dictDataList.content, url: dictDataList.url,originator: dictDataList.originator,tags: dictDataList.tags)
-                            self.arrParsedDataList.append(dictValue)
-                            self.displayViewController(indexItem: index)
-                        completion()
+            if let response = response as? HTTPURLResponse,response.statusCode == 200 {
+                DispatchQueue.main.sync {
+                    if let dList = try? JSONDecoder().decode(StructMain.self, from: data!) {
+                        print("good Response \(index)")
+                            let dValue = StructMain(id: dList.id,language_code: dList.language_code,content: dList.content, url: dList.url,originator: dList.originator,tags: dList.tags)
+                            self.arrParsedDataList.append(dValue)
+                        self.displayViewController(indexItem: index)
                 } else {
                         print("Invalid Response")
                     }
@@ -71,7 +65,6 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                     print("HTTP Request Failed \(error)")
                 }
            }.resume()
-        print("Check...")
     }
     func loadHeaders() -> [String : String] {
         var arrHeaderList = [String: String]()
@@ -88,14 +81,10 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         }
         return arrHeaderList
     }
-    /*
-    func getViewControllers(indexItem : Int) {
-            arrViewControllerList.append(self.getInstance(index: indexItem))
-   }*/
     func getInstance(index: Int) -> UIViewController {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let objVC  = storyboard.instantiateViewController(withIdentifier: "DisplayQuoteDataViewController")
-        objVC.index(ofAccessibilityElement: index)
+       // objVC.index(ofAccessibilityElement: index)
         return objVC
     }
     func reloadDataSourceDelegate() {
@@ -109,10 +98,6 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             let strFirstValue = arrParsedDataList[indexItem]
             obj.strValue = strFirstValue.content
             arrViewControllerList.append(obj)
-        if indexItem == 0 {
-            setViewControllers([arrViewControllerList[indexItem]], direction: .forward, animated: true)
-          //  self.loadJSON(index: nextIndex + 1)
-        }
     }
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         checkNextPageTransition = false
@@ -122,6 +107,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         // Previous UIViewController instance
         previousIndex = currentIndex - 1
         currentIndex = previousIndex
+        print("Before CurrentIndex \(currentIndex)")
         guard let obj: DisplayQuoteDataViewController = arrViewControllerList[previousIndex] as? DisplayQuoteDataViewController else {
             let obj: UIViewController = arrViewControllerList[previousIndex]
             return obj
@@ -136,6 +122,8 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         checkNextPageTransition = true
         nextIndex = currentIndex + 1
         currentIndex = nextIndex
+        print("After CurrentIndex \(currentIndex)")
+
         guard let obj: DisplayQuoteDataViewController = arrViewControllerList[nextIndex] as? DisplayQuoteDataViewController else {
             let obj: UIViewController = arrViewControllerList[nextIndex]
             return obj
@@ -144,13 +132,10 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             obj.strValue = strQuote.content
         return obj
     }
-    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool){
+    func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             if checkNextPageTransition {
-                dispatchGroup.enter()
-                self.loadJSON(index: nextIndex,completion: {
-                    self.dispatchGroup.leave()
-                })
+                self.loadJSON(index: nextIndex)
             }
         }
     }
