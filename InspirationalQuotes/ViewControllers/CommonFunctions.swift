@@ -9,7 +9,6 @@ import UIKit
 
 class CommonFunctions: NSObject {
     static let objCommonFunction = CommonFunctions()
-   
     func readLocalFile(forName name: String) -> Data? {
         do {
             if let bundlePath = Bundle.main.path(forResource: name,

@@ -41,6 +41,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         let dictFirstValue = StructMain(id: 1,language_code: "en",content: "Welcome to Inspirational Quotes", url: "",originator: dictOriginator,tags: [])
         arrParsedDataList.append(dictFirstValue)
     }
+    // MARK: Parsing Methods.
     func loadJSON(index: Int) {
         let headers = self.loadHeaders()
         var request = URLRequest(url: NSURL(string: "https://quotes15.p.rapidapi.com/quotes/random/")! as URL,
@@ -96,9 +97,11 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             return
         }
             let strFirstValue = arrParsedDataList[indexItem]
-            obj.strValue = strFirstValue.content
+            obj.strQuote = strFirstValue.content
+            //obj.strAuthor = "-\(strFirstValue.originator.name)"
             arrViewControllerList.append(obj)
     }
+    // MARK: PageViewController Methods.
     func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         checkNextPageTransition = false
     if currentIndex == 0 {
@@ -113,7 +116,10 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             return obj
         }
         let strQuote = arrParsedDataList[previousIndex]
-        obj.strValue = strQuote.content
+        obj.strQuote = strQuote.content
+        if !strQuote.originator.name.isEmpty {
+            obj.strAuthor = "-\(strQuote.originator.name)"
+        }
         return obj
     }
     }
@@ -129,7 +135,10 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             return obj
         }
             let strQuote = arrParsedDataList[nextIndex]
-            obj.strValue = strQuote.content
+            obj.strQuote = strQuote.content
+        if !strQuote.originator.name.isEmpty {
+            obj.strAuthor = "-\(strQuote.originator.name)"
+        }
         return obj
     }
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {

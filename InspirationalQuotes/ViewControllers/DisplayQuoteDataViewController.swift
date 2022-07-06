@@ -13,16 +13,28 @@ struct StrQuote1: Decodable {
 class DisplayQuoteDataViewController: UIViewController {
     @IBOutlet var viewDisplay: UIView!
     @IBOutlet weak var lblQuote: UILabel!
+    @IBOutlet weak var lblAuthor: UILabel!
+    @IBOutlet weak var constraintsLblQuotesTop: NSLayoutConstraint!
     var arrParsedJson: [String] = []
     var index = 0
-    var strValue: String = ""
+    var strQuote: String = ""
+    var strAuthor: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
-        lblQuote.text = strValue
-        // Do any additional setup after loading the view.
-//        curl --request GET \
-//            --url https://quotes15.p.rapidapi.com/quotes/random/ \
-//            --header 'X-RapidAPI-Host: quotes15.p.rapidapi.com' \
-//            --header 'X-RapidAPI-Key: aedfa8ecf5mshc5d574796af4a20p1d4569jsn0badb1845350'
+        let animation = CATransition()
+        animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        animation.type = CATransitionType.reveal
+        animation.subtype = CATransitionSubtype.fromTop
+        animation.duration = 4
+        lblQuote.layer.add(animation, forKey: nil)
+        lblAuthor.layer.add(animation, forKey: nil)
+        lblQuote.text = strQuote
+        lblQuote.numberOfLines = 0
+        lblQuote.sizeToFit()
+        lblAuthor.text = strAuthor
+        if strAuthor.isEmpty {
+            lblQuote.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            lblQuote.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+        }
     }
 }
