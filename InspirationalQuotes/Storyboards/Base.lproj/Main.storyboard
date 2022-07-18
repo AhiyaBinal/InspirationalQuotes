@@ -94,7 +94,7 @@
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="sOT-FC-2rq"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" red="0.16440510750000001" green="0.42419445509999998" blue="0.40853965279999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="82X-JE-emO" firstAttribute="leading" secondItem="sOT-FC-2rq" secondAttribute="leading" id="0ch-Xu-wPR"/>
                             <constraint firstItem="sOT-FC-2rq" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="Pvv-S4-q72" secondAttribute="trailing" id="4ra-0r-rPJ"/>

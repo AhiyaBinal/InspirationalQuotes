@@ -64,6 +64,12 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 }
                 } else if let error = error {
                     print("HTTP Request Failed \(error)")
+                    let alert = UIAlertController(title: "Error", message: "An Error Occurred", preferredStyle: UIAlertController.Style.alert)
+                       alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
+                           self.loadJSON(index: self.currentIndex + 1)
+                       }))
+                       alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
+                       self.present(alert, animated: true, completion: nil)
                 }
            }.resume()
     }
