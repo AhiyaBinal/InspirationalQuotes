@@ -36,15 +36,13 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         self.loadFirstData()
         self.displayViewController(indexItem: 0)
         setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
-       
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         if self.isConnectedToNetwork() {
             self.loadJSON(index: currentIndex + 1)
             self.reloadDataSourceDelegate()
-        }
-        else {
+        } else {
             self.enrouteToSettingApp()
         }
     }
@@ -111,7 +109,6 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         }
             let strFirstValue = arrParsedDataList[indexItem]
             obj.strQuote = strFirstValue.content
-            //obj.strAuthor = "-\(strFirstValue.originator.name)"
             arrViewControllerList.append(obj)
     }
     // MARK: PageViewController Methods.
@@ -159,7 +156,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
             if checkNextPageTransition {
                 if self.isConnectedToNetwork() {
                     self.loadJSON(index: nextIndex)
-                }else {
+                } else {
                     nextIndex = currentIndex - 1
                     currentIndex = nextIndex
                     self.enrouteToSettingApp()
