@@ -6,6 +6,9 @@
 //
 
 import UIKit
+import Foundation
+import SystemConfiguration
+
 struct StructMain: Decodable {
     let id: Int
     let language_code: String
@@ -33,8 +36,17 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         self.loadFirstData()
         self.displayViewController(indexItem: 0)
         setViewControllers([arrViewControllerList[0]], direction: .forward, animated: true)
-        self.loadJSON(index: currentIndex + 1)
-        self.reloadDataSourceDelegate()
+       
+    }
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if self.isConnectedToNetwork() {
+            self.loadJSON(index: currentIndex + 1)
+            self.reloadDataSourceDelegate()
+        }
+        else {
+            self.enrouteToSettingApp()
+        }
     }
     func loadFirstData() {
         let dictOriginator = Structoriginator(id: 0, name: "", url: "")
@@ -64,12 +76,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 }
                 } else if let error = error {
                     print("HTTP Request Failed \(error)")
-                    let alert = UIAlertController(title: "Error", message: "An Error Occurred", preferredStyle: UIAlertController.Style.alert)
-                       alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: {(action:UIAlertAction!) in
-                           self.loadJSON(index: self.currentIndex + 1)
-                       }))
-                       alert.addAction(UIAlertAction(title: "Cancel", style: UIAlertAction.Style.default, handler: nil))
-                       self.present(alert, animated: true, completion: nil)
+                    self.enrouteToSettingApp()
                 }
            }.resume()
     }
@@ -150,8 +157,59 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
     func pageViewController(_ pageViewController: UIPageViewController, didFinishAnimating finished: Bool, previousViewControllers: [UIViewController], transitionCompleted completed: Bool) {
         if completed {
             if checkNextPageTransition {
-                self.loadJSON(index: nextIndex)
+                if self.isConnectedToNetwork() {
+                    self.loadJSON(index: nextIndex)
+                }else {
+                    self.enrouteToSettingApp()
+                }
             }
         }
+    }
+    func isConnectedToNetwork() -> Bool {
+            var zeroAddress = sockaddr_in()
+            zeroAddress.sin_len = UInt8(MemoryLayout<sockaddr_in>.size)
+            zeroAddress.sin_family = sa_family_t(AF_INET)
+
+            guard let defaultRouteReachability = withUnsafePointer(to: &zeroAddress, {
+                $0.withMemoryRebound(to: sockaddr.self, capacity: 1) {
+                    SCNetworkReachabilityCreateWithAddress(nil, $0)
+                }
+            }) else {
+                return false
+            }
+
+            var flags: SCNetworkReachabilityFlags = []
+            if !SCNetworkReachabilityGetFlags(defaultRouteReachability, &flags) {
+                return false
+            }
+            if flags.isEmpty {
+                return false
+            }
+
+            let isReachable = flags.contains(.reachable)
+            let needsConnection = flags.contains(.connectionRequired)
+
+            return (isReachable && !needsConnection)
+        }
+    func enrouteToSettingApp() {
+        let alertController = UIAlertController(title: "No Internet Connection", message: "Please Check Your Internet Connection.", preferredStyle: .alert)
+
+            let settingsAction = UIAlertAction(title: "Settings", style: .default) { (_) -> Void in
+
+                guard let settingsUrl = URL(string: UIApplication.openSettingsURLString) else {
+                    return
+                }
+
+                if UIApplication.shared.canOpenURL(settingsUrl) {
+                    UIApplication.shared.open(settingsUrl, completionHandler: { (success) in
+                        print("Settings opened: \(success)") // Prints true
+                    })
+                }
+            }
+            alertController.addAction(settingsAction)
+            let cancelAction = UIAlertAction(title: "Cancel", style: .default, handler: nil)
+            alertController.addAction(cancelAction)
+
+        self.present(alertController, animated: true, completion: nil)
     }
 }
