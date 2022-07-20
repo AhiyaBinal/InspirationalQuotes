@@ -160,6 +160,8 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 if self.isConnectedToNetwork() {
                     self.loadJSON(index: nextIndex)
                 }else {
+                    nextIndex = currentIndex - 1
+                    currentIndex = nextIndex
                     self.enrouteToSettingApp()
                 }
             }
