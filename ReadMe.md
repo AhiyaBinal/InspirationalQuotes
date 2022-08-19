@@ -1,6 +1,6 @@
 
 #Introduction
-Inspirational Quotes is an example of PageViewController, JSON Parsing and Share Functionality
+Inspirational Quotes is an simple app of display quotes from Rapid API and share with your friends contains PageViewController, JSON Parsing and Share Functionality
 
 #Requirements
 Xcode 13 or above
