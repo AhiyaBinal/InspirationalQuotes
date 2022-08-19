@@ -22,6 +22,9 @@
 		B10EE3702860CFAF00799285 /* InspirationalQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */; };
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
 		B12C486B28B02C5E004A442D /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = B12C486A28B02C5E004A442D /* ReadMe.md */; };
+		B1D4125E28B0525500121319 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125B28B0525400121319 /* image1.png */; };
+		B1D4125F28B0525500121319 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125C28B0525400121319 /* image2.png */; };
+		B1D4126028B0525500121319 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125D28B0525400121319 /* image3.png */; };
 		B1F712B0286A06880089882F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B1F712AF286A06880089882F /* .swiftlint.yml */; };
 		B1F712B2286A3C630089882F /* URLHeader.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1F712B1286A3C630089882F /* URLHeader.plist */; };
 /* End PBXBuildFile section */
@@ -66,6 +69,9 @@
 		B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITests.swift; sourceTree = "<group>"; };
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B12C486A28B02C5E004A442D /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		B1D4125B28B0525400121319 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
+		B1D4125C28B0525400121319 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
+		B1D4125D28B0525400121319 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		B1F712AF286A06880089882F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B1F712B1286A3C630089882F /* URLHeader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLHeader.plist; sourceTree = "<group>"; };
 		F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +169,7 @@
 		B10EE34A2860CFAC00799285 /* InspirationalQuotes */ = {
 			isa = PBXGroup;
 			children = (
+				B1D4125A28B0524400121319 /* images */,
 				B10EE34B2860CFAC00799285 /* AppDelegate.swift */,
 				B10EE34D2860CFAC00799285 /* SceneDelegate.swift */,
 				B10E7A8828622EE500612409 /* Storyboards */,
@@ -189,6 +196,16 @@
 				B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */,
 			);
 			path = InspirationalQuotesUITests;
+			sourceTree = "<group>";
+		};
+		B1D4125A28B0524400121319 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				B1D4125B28B0525400121319 /* image1.png */,
+				B1D4125C28B0525400121319 /* image2.png */,
+				B1D4125D28B0525400121319 /* image3.png */,
+			);
+			path = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -299,8 +316,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1D4125E28B0525500121319 /* image1.png in Resources */,
 				B1F712B0286A06880089882F /* .swiftlint.yml in Resources */,
+				B1D4125F28B0525500121319 /* image2.png in Resources */,
 				B10EE35B2860CFAF00799285 /* LaunchScreen.storyboard in Resources */,
+				B1D4126028B0525500121319 /* image3.png in Resources */,
 				B1F712B2286A3C630089882F /* URLHeader.plist in Resources */,
 				B10EE3582860CFAF00799285 /* Assets.xcassets in Resources */,
 				B12C486B28B02C5E004A442D /* ReadMe.md in Resources */,
