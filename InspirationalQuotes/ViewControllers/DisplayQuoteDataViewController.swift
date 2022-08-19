@@ -6,10 +6,7 @@
 //
 
 import UIKit
-struct StrQuote1: Decodable {
-    let content: String
-    let name: String
-}
+
 class DisplayQuoteDataViewController: UIViewController {
     @IBOutlet var viewDisplay: UIView!
     @IBOutlet weak var lblQuote: UILabel!
