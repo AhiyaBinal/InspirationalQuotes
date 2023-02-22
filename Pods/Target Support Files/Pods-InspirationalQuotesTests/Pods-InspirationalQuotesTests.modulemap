@@ -1,6 +1,0 @@
-framework module Pods_InspirationalQuotesTests {
-  umbrella header "Pods-InspirationalQuotesTests-umbrella.h"
-
-  export *
-  module * { export * }
-}

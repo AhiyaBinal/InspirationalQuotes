@@ -1,5 +1,0 @@
-#import <Foundation/Foundation.h>
-@interface PodsDummy_Pods_InspirationalQuotes_InspirationalQuotesUITests : NSObject
-@end
-@implementation PodsDummy_Pods_InspirationalQuotes_InspirationalQuotesUITests
-@end
