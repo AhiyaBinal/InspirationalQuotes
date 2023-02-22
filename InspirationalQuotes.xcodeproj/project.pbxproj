@@ -22,6 +22,10 @@
 		B10EE3702860CFAF00799285 /* InspirationalQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */; };
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
 		B12C486B28B02C5E004A442D /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = B12C486A28B02C5E004A442D /* ReadMe.md */; };
+		B1752D3F29A69E240091E8A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1752D3E29A69E240091E8A6 /* RxSwift */; };
+		B1752D4329A6A7810091E8A6 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4129A6A7810091E8A6 /* PageViewModel.swift */; };
+		B1752D4429A6A7810091E8A6 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4229A6A7810091E8A6 /* PageModel.swift */; };
+		B1752D4629A6AA5D0091E8A6 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = B1752D4529A6AA5D0091E8A6 /* RxCocoa */; };
 		B1D4125E28B0525500121319 /* image1.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125B28B0525400121319 /* image1.png */; };
 		B1D4125F28B0525500121319 /* image2.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125C28B0525400121319 /* image2.png */; };
 		B1D4126028B0525500121319 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125D28B0525400121319 /* image3.png */; };
@@ -47,11 +51,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.debug.xcconfig"; sourceTree = "<group>"; };
-		23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.debug.xcconfig"; sourceTree = "<group>"; };
-		4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig"; sourceTree = "<group>"; };
-		75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes/Pods-InspirationalQuotes.release.xcconfig"; sourceTree = "<group>"; };
-		7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotes-InspirationalQuotesUITests/Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuotePageViewController.swift; sourceTree = "<group>"; };
 		B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuoteDataViewController.swift; sourceTree = "<group>"; };
 		B10EE3482860CFAC00799285 /* InspirationalQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -69,12 +68,14 @@
 		B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITests.swift; sourceTree = "<group>"; };
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B12C486A28B02C5E004A442D /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		B1752D3D29A69E100091E8A6 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RxSwift; path = Carthage/Checkouts/RxSwift; sourceTree = "<group>"; };
+		B1752D4129A6A7810091E8A6 /* PageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
+		B1752D4229A6A7810091E8A6 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
 		B1D4125B28B0525400121319 /* image1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image1.png; sourceTree = "<group>"; };
 		B1D4125C28B0525400121319 /* image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image2.png; sourceTree = "<group>"; };
 		B1D4125D28B0525400121319 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		B1F712AF286A06880089882F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B1F712B1286A3C630089882F /* URLHeader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLHeader.plist; sourceTree = "<group>"; };
-		F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InspirationalQuotesTests.release.xcconfig"; path = "Target Support Files/Pods-InspirationalQuotesTests/Pods-InspirationalQuotesTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1752D4629A6AA5D0091E8A6 /* RxCocoa in Frameworks */,
+				B1752D3F29A69E240091E8A6 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,21 +108,9 @@
 		4BE439EA575B42C202DBA3E7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				B1752D3D29A69E100091E8A6 /* RxSwift */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5A5C748CCE67FA0450B1792C /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */,
-				75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */,
-				7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */,
-				4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */,
-				23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */,
-				F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */,
-			);
-			path = Pods;
 			sourceTree = "<group>";
 		};
 		B10E7A8728622EB500612409 /* ViewControllers */ = {
@@ -152,7 +143,6 @@
 				B10EE36E2860CFAF00799285 /* InspirationalQuotesUITests */,
 				B10EE3492860CFAC00799285 /* Products */,
 				4BE439EA575B42C202DBA3E7 /* Frameworks */,
-				5A5C748CCE67FA0450B1792C /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -173,6 +163,7 @@
 				B10EE34B2860CFAC00799285 /* AppDelegate.swift */,
 				B10EE34D2860CFAC00799285 /* SceneDelegate.swift */,
 				B10E7A8828622EE500612409 /* Storyboards */,
+				B1752D4029A6A57F0091E8A6 /* ViewModel */,
 				B10E7A8728622EB500612409 /* ViewControllers */,
 				B10EE3572860CFAF00799285 /* Assets.xcassets */,
 				B10EE35C2860CFAF00799285 /* Info.plist */,
@@ -198,6 +189,15 @@
 			path = InspirationalQuotesUITests;
 			sourceTree = "<group>";
 		};
+		B1752D4029A6A57F0091E8A6 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				B1752D4229A6A7810091E8A6 /* PageModel.swift */,
+				B1752D4129A6A7810091E8A6 /* PageViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		B1D4125A28B0524400121319 /* images */ = {
 			isa = PBXGroup;
 			children = (
@@ -215,7 +215,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE3752860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotes" */;
 			buildPhases = (
-				AAE86896C1B92DAA5B5B1A81 /* [CP] Check Pods Manifest.lock */,
 				B1787D5528611F6D00F3AC05 /* Run Script */,
 				B10EE3442860CFAC00799285 /* Sources */,
 				B10EE3452860CFAC00799285 /* Frameworks */,
@@ -226,6 +225,10 @@
 			dependencies = (
 			);
 			name = InspirationalQuotes;
+			packageProductDependencies = (
+				B1752D3E29A69E240091E8A6 /* RxSwift */,
+				B1752D4529A6AA5D0091E8A6 /* RxCocoa */,
+			);
 			productName = InspirationalQuotes;
 			productReference = B10EE3482860CFAC00799285 /* InspirationalQuotes.app */;
 			productType = "com.apple.product-type.application";
@@ -389,28 +392,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		AAE86896C1B92DAA5B5B1A81 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotes-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B1787D5528611F6D00F3AC05 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -427,7 +408,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/SwiftLint/swiftlint\"\n\n";
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\nif which swiftlint > /dev/null; then\n      swiftlint autocorrect > /dev/null\n      swiftlint lint --fix --format\n      swiftlint\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n\n";
 		};
 /* End PBXShellScriptBuildPhase section */
 
@@ -436,9 +417,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1752D4429A6A7810091E8A6 /* PageModel.swift in Sources */,
 				B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */,
 				B10EE3562860CFAC00799285 /* InspirationalQuotes.xcdatamodeld in Sources */,
 				B10EE3502860CFAC00799285 /* ViewController.swift in Sources */,
+				B1752D4329A6A7810091E8A6 /* PageViewModel.swift in Sources */,
 				B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */,
 				B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
 				B10EE34E2860CFAC00799285 /* SceneDelegate.swift in Sources */,
@@ -617,7 +600,6 @@
 		};
 		B10EE3762860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 140E8A4E8E200CD903E9A4E8 /* Pods-InspirationalQuotes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -649,7 +631,6 @@
 		};
 		B10EE3772860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 75C8168A261BB224595CAC33 /* Pods-InspirationalQuotes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -681,7 +662,6 @@
 		};
 		B10EE3792860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 23C932A57ACE82103188A629 /* Pods-InspirationalQuotesTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -701,7 +681,6 @@
 		};
 		B10EE37A2860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F790A6B95E4DCDFF65A5C20E /* Pods-InspirationalQuotesTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -721,7 +700,6 @@
 		};
 		B10EE37C2860CFAF00799285 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7F90645A0A2F20E13270864A /* Pods-InspirationalQuotes-InspirationalQuotesUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -739,7 +717,6 @@
 		};
 		B10EE37D2860CFAF00799285 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4474A2B26DA5745FC86BC2F4 /* Pods-InspirationalQuotes-InspirationalQuotesUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -795,6 +772,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B1752D3E29A69E240091E8A6 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxSwift;
+		};
+		B1752D4529A6AA5D0091E8A6 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = RxCocoa;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		B10EE3542860CFAC00799285 /* InspirationalQuotes.xcdatamodeld */ = {

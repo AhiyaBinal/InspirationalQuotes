@@ -38,12 +38,12 @@ class DisplayQuoteDataViewController: UIViewController {
     }
     @IBAction func btnSharePressed(_ sender: UIButton) {
         let imgToShare :UIImage = self.createImageFromQuote()!
-                let objectsToShare: [Any] = [imgToShare]
-                let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
-                activityVC.popoverPresentationController?.sourceView = sender
-                activityVC.popoverPresentationController?.sourceRect = sender.frame
-                present(activityVC, animated: true, completion: nil)
-          //  }
+        let objectsToShare: [Any] = [imgToShare]
+        let activityVC = UIActivityViewController(activityItems: objectsToShare, applicationActivities: nil)
+        activityVC.popoverPresentationController?.sourceView = sender
+        activityVC.popoverPresentationController?.sourceRect = sender.frame
+        present(activityVC, animated: true, completion: nil)
+        //  }
     }
     func createImageFromQuote() -> UIImage? {
         UIGraphicsBeginImageContextWithOptions(viewShare.frame.size, true, 0)
