@@ -8,6 +8,7 @@ SwiftLint
 
 #Installation
 To install SwiftLint follow the steps from https://realm.github.io/SwiftLint/
+To install RxSwift follow the steps from https://github.com/ReactiveX/RxSwift
 
 #Configuration
 Steps to implement PageViewController , Json Parsing and Share Functionality
