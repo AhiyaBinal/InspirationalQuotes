@@ -13,11 +13,16 @@ import RxCocoa
 
 class PageViewModel {
 
-    lazy var dataObject: Observable<Data> = {
-        return self.getJSONData()
+    var apiDataRequest: APIRequestProtocol!
+    init(apiDataRequest: APIRequestProtocol) {
+        self.apiDataRequest = apiDataRequest
+    }
+
+    lazy var dataObject: Observable<PageElements> = {
+        return self.apiDataRequest.getJSONData(for: PageElements.self)
     }()
     func loadFirstData() -> PageElements {
-        let dictOriginator = PageModel(id: 0, name: "", url: "")
+        let dictOriginator = PageModel(id: 0, master_id: 0, name: "", language_code: "", description: "", url: "")
         let dictFirstValue = PageElements(id: 1,language_code: "en",content: "Welcome to Inspirational Quotes", url: "",originator: dictOriginator,tags: [])
         return dictFirstValue
     }
@@ -48,28 +53,4 @@ class PageViewModel {
 
         return (isReachable && !needsConnection)
     }
-    func loadHeaders() -> [String : String] {
-        var arrHeaderList = [String: String]()
-        if let infoPlistPath = Bundle.main.url(forResource: "URLHeader", withExtension: "plist") {
-            do {
-                let infoPlistData = try Data(contentsOf: infoPlistPath)
-                if let dict = try PropertyListSerialization.propertyList(from: infoPlistData, options: [], format: nil) as? [String: String]? {
-                    arrHeaderList = dict!
-                }
-            } catch {
-                arrHeaderList = ["X-RapidAPI-Host": "quotes15.p.rapidapi.com",
-                                 "X-RapidAPI-Key": "aedfa8ecf5mshc5d574796af4a20p1d4569jsn0badb1845350"]
-            }
-        }
-        return arrHeaderList
-    }
-    func getJSONData() -> Observable<Data> {
-        let url = URL(string: "https://quotes15.p.rapidapi.com/quotes/random/")!
-        let headers = self.loadHeaders()
-        var request = URLRequest(url: url, cachePolicy: .useProtocolCachePolicy, timeoutInterval: 10.0)
-        request.httpMethod = "GET"
-        request.allHTTPHeaderFields = headers
-        return URLSession.shared.rx.data(request: request)
-    }
-
 }

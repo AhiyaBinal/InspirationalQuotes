@@ -19,7 +19,7 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
     var nextIndex: Int = 0
     var checkNextPageTransition = Bool()
     let dispatchGroup = DispatchGroup()
-    let objPageViewModel = PageViewModel()
+    let objPageViewModel = PageViewModel(apiDataRequest: APIDataRequest())
     let disposeBag = DisposeBag()
 
     override func viewDidLoad() {
@@ -33,10 +33,6 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
         if objPageViewModel.isConnectedToNetwork() {
             objPageViewModel.dataObject
                 .observe(on: MainScheduler.instance)
-                .map { data -> PageElements in
-                    let decoder = JSONDecoder()
-                    return try decoder.decode(PageElements.self, from: data)
-                }
                 .subscribe(onNext: { person in
                     self.arrParsedDataList.append(person)
                     self.arrViewControllerList.append(self.displayViewController(indexItem: self.currentIndex + 1, arrItem: self.arrParsedDataList))
@@ -105,10 +101,6 @@ class DisplayQuotePageViewController: UIPageViewController, UIPageViewController
                 if objPageViewModel.isConnectedToNetwork() {
                     objPageViewModel.dataObject
                         .observe(on: MainScheduler.instance)
-                        .map { data -> PageElements in
-                            let decoder = JSONDecoder()
-                            return try decoder.decode(PageElements.self, from: data)
-                        }
                         .subscribe(onNext: { person in
                             self.arrParsedDataList.append(person)
                             self.arrViewControllerList.append(self.displayViewController(indexItem: self.nextIndex, arrItem: self.arrParsedDataList))

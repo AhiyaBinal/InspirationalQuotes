@@ -9,31 +9,34 @@ import UIKit
 
 class DisplayQuoteDataViewController: UIViewController {
     @IBOutlet var viewDisplay: UIView!
-    @IBOutlet weak var lblQuote: UILabel!
-    @IBOutlet weak var lblAuthor: UILabel!
-    @IBOutlet weak var btnShare: UIButton!
-    @IBOutlet weak var viewShare: UIView!
+    @IBOutlet weak var lblQuote: UILabel?
+    @IBOutlet weak var lblAuthor: UILabel?
+    @IBOutlet weak var btnShare: UIButton?
+    @IBOutlet weak var viewShare: UIView?
     var arrParsedJson: [String] = []
     var index = 0
     var strQuote: String = ""
     var strAuthor: String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+    }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
         let animation = CATransition()
         animation.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
         animation.type = CATransitionType.reveal
         animation.subtype = CATransitionSubtype.fromTop
         animation.duration = 4
-        lblQuote.layer.add(animation, forKey: nil)
-        lblAuthor.layer.add(animation, forKey: nil)
-        lblQuote.text = strQuote
-        lblQuote.numberOfLines = 0
-        lblQuote.sizeToFit()
-        lblAuthor.text = strAuthor
+        lblQuote?.layer.add(animation, forKey: nil)
+        lblAuthor?.layer.add(animation, forKey: nil)
+        lblQuote?.text = strQuote
+        lblQuote?.numberOfLines = 0
+        lblQuote?.sizeToFit()
+        lblAuthor?.text = strAuthor
         if strAuthor.isEmpty {
-            btnShare.isHidden = true
-            lblQuote.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
-            lblQuote.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
+            btnShare?.isHidden = true
+            lblQuote?.centerXAnchor.constraint(equalTo: view.centerXAnchor).isActive = true
+            lblQuote?.centerYAnchor.constraint(equalTo: view.centerYAnchor).isActive = true
         }
     }
     @IBAction func btnSharePressed(_ sender: UIButton) {
@@ -46,8 +49,8 @@ class DisplayQuoteDataViewController: UIViewController {
         //  }
     }
     func createImageFromQuote() -> UIImage? {
-        UIGraphicsBeginImageContextWithOptions(viewShare.frame.size, true, 0)
-        _ = viewShare.drawHierarchy(in: viewShare.bounds, afterScreenUpdates: true)
+        UIGraphicsBeginImageContextWithOptions(viewShare?.frame.size ?? CGSize(width: 400, height: 100), true, 0)
+        _ = viewShare?.drawHierarchy(in: viewShare?.bounds ?? CGRect(origin: CGPoint(x: 0, y: 0), size: CGSize(width: 400, height: 100)), afterScreenUpdates: true)
         let image = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return image

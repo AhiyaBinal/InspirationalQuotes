@@ -7,12 +7,15 @@
 
 import Foundation
 
-struct PageModel: Decodable {
+struct PageModel: Codable {
     let id: Int
+    let master_id: Int
     let name: String
+    let language_code: String
+    let description: String
     let url: String
 }
-struct PageElements: Decodable {
+struct PageElements: Codable {
     let id: Int
     let language_code: String
     let content: String

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B104D4C829F853C100F06480 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4229A6A7810091E8A6 /* PageModel.swift */; };
+		B104D4CA29F854E900F06480 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4129A6A7810091E8A6 /* PageViewModel.swift */; };
 		B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
 		B10E7A8628622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */; };
 		B10E7A8A28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */; };
@@ -22,6 +24,10 @@
 		B10EE3702860CFAF00799285 /* InspirationalQuotesUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */; };
 		B10EE3722860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */; };
 		B12C486B28B02C5E004A442D /* ReadMe.md in Resources */ = {isa = PBXBuildFile; fileRef = B12C486A28B02C5E004A442D /* ReadMe.md */; };
+		B12CEC8A2A04532D0025A1DA /* APIDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CEC892A04532D0025A1DA /* APIDataRequest.swift */; };
+		B15FC9A52A05AB0C0032CACB /* PageViewModelTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B15FC9A42A05AB0C0032CACB /* PageViewModelTests.swift */; };
+		B15FC9A62A05B39F0032CACB /* APIDataRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12CEC892A04532D0025A1DA /* APIDataRequest.swift */; };
+		B15FC9A72A05B5DC0032CACB /* MockData.json in Sources */ = {isa = PBXBuildFile; fileRef = B1FABB8B2A0421DE00EFEBDA /* MockData.json */; };
 		B1752D3F29A69E240091E8A6 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B1752D3E29A69E240091E8A6 /* RxSwift */; };
 		B1752D4329A6A7810091E8A6 /* PageViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4129A6A7810091E8A6 /* PageViewModel.swift */; };
 		B1752D4429A6A7810091E8A6 /* PageModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1752D4229A6A7810091E8A6 /* PageModel.swift */; };
@@ -31,6 +37,9 @@
 		B1D4126028B0525500121319 /* image3.png in Resources */ = {isa = PBXBuildFile; fileRef = B1D4125D28B0525400121319 /* image3.png */; };
 		B1F712B0286A06880089882F /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = B1F712AF286A06880089882F /* .swiftlint.yml */; };
 		B1F712B2286A3C630089882F /* URLHeader.plist in Resources */ = {isa = PBXBuildFile; fileRef = B1F712B1286A3C630089882F /* URLHeader.plist */; };
+		B1FABB8A2A041F6700EFEBDA /* MockAPIRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FABB892A041F6700EFEBDA /* MockAPIRequest.swift */; };
+		B1FABB8C2A0421DE00EFEBDA /* MockData.json in Resources */ = {isa = PBXBuildFile; fileRef = B1FABB8B2A0421DE00EFEBDA /* MockData.json */; };
+		B1FABB8E2A04221E00EFEBDA /* Mockable.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1FABB8D2A04221E00EFEBDA /* Mockable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +60,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B104D4C929F854DB00F06480 /* PageModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = PageModel.swift; path = InspirationalQuotes/ViewModel/PageModel.swift; sourceTree = "<group>"; };
 		B10E7A8428622E8E00612409 /* DisplayQuotePageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuotePageViewController.swift; sourceTree = "<group>"; };
 		B10E7A8928623EC500612409 /* DisplayQuoteDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayQuoteDataViewController.swift; sourceTree = "<group>"; };
 		B10EE3482860CFAC00799285 /* InspirationalQuotes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InspirationalQuotes.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +78,8 @@
 		B10EE36F2860CFAF00799285 /* InspirationalQuotesUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITests.swift; sourceTree = "<group>"; };
 		B10EE3712860CFAF00799285 /* InspirationalQuotesUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InspirationalQuotesUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		B12C486A28B02C5E004A442D /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
+		B12CEC892A04532D0025A1DA /* APIDataRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIDataRequest.swift; sourceTree = "<group>"; };
+		B15FC9A42A05AB0C0032CACB /* PageViewModelTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewModelTests.swift; sourceTree = "<group>"; };
 		B1752D3D29A69E100091E8A6 /* RxSwift */ = {isa = PBXFileReference; lastKnownFileType = wrapper; name = RxSwift; path = Carthage/Checkouts/RxSwift; sourceTree = "<group>"; };
 		B1752D4129A6A7810091E8A6 /* PageViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageViewModel.swift; sourceTree = "<group>"; };
 		B1752D4229A6A7810091E8A6 /* PageModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PageModel.swift; sourceTree = "<group>"; };
@@ -76,6 +88,9 @@
 		B1D4125D28B0525400121319 /* image3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = image3.png; sourceTree = "<group>"; };
 		B1F712AF286A06880089882F /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		B1F712B1286A3C630089882F /* URLHeader.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = URLHeader.plist; sourceTree = "<group>"; };
+		B1FABB892A041F6700EFEBDA /* MockAPIRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockAPIRequest.swift; sourceTree = "<group>"; };
+		B1FABB8B2A0421DE00EFEBDA /* MockData.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockData.json; sourceTree = "<group>"; };
+		B1FABB8D2A04221E00EFEBDA /* Mockable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mockable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +150,7 @@
 		B10EE33F2860CFAC00799285 = {
 			isa = PBXGroup;
 			children = (
+				B104D4C929F854DB00F06480 /* PageModel.swift */,
 				B12C486A28B02C5E004A442D /* ReadMe.md */,
 				B1F712B1286A3C630089882F /* URLHeader.plist */,
 				B1F712AF286A06880089882F /* .swiftlint.yml */,
@@ -176,6 +192,10 @@
 			isa = PBXGroup;
 			children = (
 				B10EE3652860CFAF00799285 /* InspirationalQuotesTests.swift */,
+				B1FABB892A041F6700EFEBDA /* MockAPIRequest.swift */,
+				B1FABB8B2A0421DE00EFEBDA /* MockData.json */,
+				B1FABB8D2A04221E00EFEBDA /* Mockable.swift */,
+				B15FC9A42A05AB0C0032CACB /* PageViewModelTests.swift */,
 			);
 			path = InspirationalQuotesTests;
 			sourceTree = "<group>";
@@ -194,6 +214,7 @@
 			children = (
 				B1752D4229A6A7810091E8A6 /* PageModel.swift */,
 				B1752D4129A6A7810091E8A6 /* PageViewModel.swift */,
+				B12CEC892A04532D0025A1DA /* APIDataRequest.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -237,7 +258,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE3782860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotesTests" */;
 			buildPhases = (
-				80B3B699E9BF58F06EF2ECC2 /* [CP] Check Pods Manifest.lock */,
 				B10EE35D2860CFAF00799285 /* Sources */,
 				B10EE35E2860CFAF00799285 /* Frameworks */,
 				B10EE35F2860CFAF00799285 /* Resources */,
@@ -256,7 +276,6 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B10EE37B2860CFAF00799285 /* Build configuration list for PBXNativeTarget "InspirationalQuotesUITests" */;
 			buildPhases = (
-				10FC8555BE12D8EAB925E179 /* [CP] Check Pods Manifest.lock */,
 				B10EE3672860CFAF00799285 /* Sources */,
 				B10EE3682860CFAF00799285 /* Frameworks */,
 				B10EE3692860CFAF00799285 /* Resources */,
@@ -335,6 +354,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B1FABB8C2A0421DE00EFEBDA /* MockData.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -348,50 +368,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		10FC8555BE12D8EAB925E179 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotes-InspirationalQuotesUITests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		80B3B699E9BF58F06EF2ECC2 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-InspirationalQuotesTests-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
 		B1787D5528611F6D00F3AC05 /* Run Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -424,6 +400,7 @@
 				B1752D4329A6A7810091E8A6 /* PageViewModel.swift in Sources */,
 				B10EE34C2860CFAC00799285 /* AppDelegate.swift in Sources */,
 				B10E7A8528622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
+				B12CEC8A2A04532D0025A1DA /* APIDataRequest.swift in Sources */,
 				B10EE34E2860CFAC00799285 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -432,9 +409,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B15FC9A72A05B5DC0032CACB /* MockData.json in Sources */,
+				B15FC9A62A05B39F0032CACB /* APIDataRequest.swift in Sources */,
+				B104D4CA29F854E900F06480 /* PageViewModel.swift in Sources */,
+				B104D4C829F853C100F06480 /* PageModel.swift in Sources */,
+				B1FABB8A2A041F6700EFEBDA /* MockAPIRequest.swift in Sources */,
 				B10E7A8B28623EC500612409 /* DisplayQuoteDataViewController.swift in Sources */,
 				B10EE3662860CFAF00799285 /* InspirationalQuotesTests.swift in Sources */,
 				B10E7A8628622E8E00612409 /* DisplayQuotePageViewController.swift in Sources */,
+				B1FABB8E2A04221E00EFEBDA /* Mockable.swift in Sources */,
+				B15FC9A52A05AB0C0032CACB /* PageViewModelTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

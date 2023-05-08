@@ -1248,7 +1248,7 @@ extension SentMessageTest {
         let middleChanges = RxObjCRuntimeChange.changes(dynamicSubclasses: 1, swizzledForwardClasses: 1, methodsForwarded: 18)
         middleRuntimeState.assertAfterThisMoment(startRuntimeState, changed:middleChanges)
 
-        _testMessageRecordedAndAllCallsAreMade(#selector(SentMessageTestBase_shared.voidJustCalledObject(toSay:)), sendMessage: { x in x.voidJustCalledObject(toSay: object); return NSValue(nonretainedObject: object)                                  }, expectedResult: NSValue(nonretainedObject: object))
+        _testMessageRecordedAndAllCallsAreMade(#selector(SentMessageTestBase_shared.voidJustCalledObject(toSay:)), sendMessage: { x in x.voidJustCalledObject(toSay: object); return NSValue(nonretainedObject: object)                                                                                                    }, expectedResult: NSValue(nonretainedObject: object))
         _testMessageRecordedAndAllCallsAreMade(#selector(SentMessageTestBase_shared.voidJustCalledClosure(toSay:)),
                                                sendMessage: { x in x.voidJustCalledClosure(toSay: closure); return "\(String(describing: closure))" },
                                                expectedResult: "\(String(describing: closure))")
